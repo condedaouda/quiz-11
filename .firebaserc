@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "les-locations"
+  },
+  "targets": {
+    "les-locations": {
+      "hosting": {
+        "formations": [
+          "quiz-formations-soulemane-scofied"
+        ]
+      }
+    }
+  }
+}
