@@ -408,9 +408,6 @@ const jsQuestions = [
 
 var interval;
 
-
-
-
 function mySnack(vraisOufaux) {
     // prendre snackbar DIV
     var x = document.getElementById("snackbar");
@@ -433,34 +430,37 @@ function mySnack(vraisOufaux) {
 
 
 function countdown() {
-  
+
 
     let seconds = 15;
     const countdownElement = document.getElementById('countdown');
-  
+
     // Affichage initial
     countdownElement.textContent = seconds;
-  
+
     // Décrémente le compteur chaque seconde
-     interval = setInterval(() => {
-      seconds--;
-  
-      // Affichage du décompte
-      countdownElement.textContent = seconds;
-  
-      // Vérification si le compte à rebours est terminé
-      if (seconds === 0) {
-        clearInterval(interval); // Arrête le compte à rebours
-        countdownElement.textContent = "Fin de jeu";
-        currentQuestion = quizData.length;
-        var getb = document.getElementById('submit')
-        getb.style.display = 'block';
-        var getscore = document.getElementById('score')
-        getscore.style.display = 'block';
-        // Ici tu peux ajouter d'autres actions à effectuer à la fin du compte à rebours
-      }
+    interval = setInterval(() => {
+        seconds--;
+
+        // Affichage du décompte
+        countdownElement.textContent = seconds;
+
+        // Vérification si le compte à rebours est terminé
+        if (seconds === 0) {
+            clearInterval(interval); // Arrête le compte à rebours
+            currentQuestion++;
+            clearInterval(interval); // Arrête le compte à rebours
+            loadQuestion();
+            // countdownElement.textContent = "Fin de jeu";
+            // currentQuestion = quizData.length;
+            // var getb = document.getElementById('submit')
+            // getb.style.display = 'block';
+            // var getscore = document.getElementById('score')
+            // getscore.style.display = 'block';
+            // Ici tu peux ajouter d'autres actions à effectuer à la fin du compte à rebours
+        }
     }, 1000); // Exécute toutes les 1000 millisecondes (1 seconde)
-  }
+}
 
 // Combine les questions dans l'ordre souhaité
 const quizData = [...jsQuestions];
@@ -485,7 +485,13 @@ let score = 0;
 
 function loadQuestion() {
     clearInterval(interval);
-    countdown();
+    if (currentQuestion < quizData.length) {
+        countdown();
+    } else {
+        var getcon = document.getElementById('countdown')
+        getcon.style.display = 'none';
+
+    }
     const currentQuizData = quizData[currentQuestion];
     questionElement.innerText = currentQuizData.question;
     optionsElement.innerHTML = "";
@@ -521,6 +527,9 @@ function checkAnswer(selectedOption) {
 
         var getscore = document.getElementById('score')
         getscore.style.display = 'block';
+
+        var getcon = document.getElementById('countdown')
+        getcon.style.display = 'none';
 
         alert(`Fin du quiz. Votre score est de ${score} sur ${quizData.length}.`);
         // Ici, vous pouvez réinitialiser le jeu ou afficher un message de fin de jeu.

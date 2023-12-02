@@ -92,13 +92,15 @@ function countdown() {
 
     // Vérification si le compte à rebours est terminé
     if (seconds === 0) {
+      currentQuestion++;
       clearInterval(interval); // Arrête le compte à rebours
-      countdownElement.textContent = "Fin de jeu";
-      currentQuestion = quizData.length;
-      var getb = document.getElementById('submit')
-      getb.style.display = 'block';
-      var getscore = document.getElementById('score')
-      getscore.style.display = 'block';
+      loadQuestion(); 
+      // countdownElement.textContent = "Fin de jeu";
+      // currentQuestion = quizData.length;
+      // var getb = document.getElementById('submit')
+      // getb.style.display = 'block';
+      // var getscore = document.getElementById('score')
+      // getscore.style.display = 'block';
       // Ici tu peux ajouter d'autres actions à effectuer à la fin du compte à rebours
     }
   }, 1000); // Exécute toutes les 1000 millisecondes (1 seconde)
@@ -127,7 +129,14 @@ let score = 0;
  
 function loadQuestion() {
   clearInterval(interval);
-  countdown();
+  if (currentQuestion < quizData.length) {
+    countdown();
+  }else{
+    var getcon = document.getElementById('countdown')
+    getcon.style.display = 'none';
+
+  }
+  
   
   const currentQuizData = quizData[currentQuestion];
   questionElement.innerText = currentQuizData.question;
@@ -163,6 +172,8 @@ function checkAnswer(selectedOption) {
     getb.style.display = 'block';
     var getscore = document.getElementById('score')
     getscore.style.display = 'block';
+    var getcon = document.getElementById('countdown')
+    getcon.style.display = 'none';
     alert(`Fin du quiz. Votre score est de ${score} sur ${quizData.length}.`);
     // Ici, vous pouvez réinitialiser le jeu ou afficher un message de fin de jeu.  
   }
