@@ -435,7 +435,7 @@ function mySnack(vraisOufaux) {
 function countdown() {
   
 
-    let seconds = 10;
+    let seconds = 15;
     const countdownElement = document.getElementById('countdown');
   
     // Affichage initial
