@@ -1,11 +1,24 @@
-/* Styles pour le quiz */
 body {
     font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
     margin: 0;
     padding: 0;
+    background-image: url('/public/images/img1.avif');
+    /* Redimensionner l'image pour couvrir tout le body */
+    background-size: cover;
+    /* Centrer l'image dans le body */
+    background-position: center;
+    /* Facultatif : spécifier une couleur de fond de secours */
+    background-color: #f8f8f8;
+    /* Couleur si l'image ne se charge pas ou est transparente */
 }
 
-#titlee{
+#countdown {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#titlee {
     color: green;
     text-decoration: underline;
 
@@ -15,9 +28,14 @@ body {
     max-width: 600px;
     background-color: #fff;
     /* height: 100vh; */
-    margin: 10px auto;
+    /* background-image: url('/public/images/img2.png'); */
+    /* Redimensionner l'image pour couvrir tout le conteneur */
+    background-size: cover;
+    /* Centrer l'image dans le conteneur */
+    background-position: center;
+    margin: 5px auto;
     text-align: center;
-    padding: 20px;
+    padding: 5px;
     /* border: 1px solid #ccc; */
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -48,9 +66,9 @@ body {
     margin: 0 auto;
 }
 
-#score {
+/* #score {
     display: none;
-}
+} */
 
 #questionn {
     text-decoration: underline;
@@ -102,8 +120,7 @@ body {
 }
 
 
-#titlee{
+#titlee {
     color: green;
     text-decoration: underline;
 }
-

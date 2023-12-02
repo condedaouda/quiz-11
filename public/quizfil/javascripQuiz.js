@@ -4,74 +4,74 @@ const jsQuestions = [
     {
         question: "Qu'est-ce que JavaScript?",
         options: ["Un langage de programmation pour le web", "Un langage de mise en page", "Un navigateur web populaire", "Une base de données"],
-        answer: 0 
-      },
-      {
+        answer: 0
+    },
+    {
         question: "Quel mot-clé est utilisé pour déclarer une variable en JavaScript?",
-        options: [ "int", "string", "let", "var"],
+        options: ["int", "string", "let", "var"],
         answer: 3
-      },
-      {
+    },
+    {
         question: "Quelle méthode est utilisée pour ajouter un élément au début d'un tableau en JavaScript?",
-        options: [ "addElement()", "push()", "unshift()", "insertFirst()"],
+        options: ["addElement()", "push()", "unshift()", "insertFirst()"],
         answer: 2
-      },
-      {
+    },
+    {
         question: "Quelle boucle JavaScript est utilisée pour parcourir les propriétés d'un objet?",
-        options: [ "for loop", "while loop", "for...in loop", "forEach loop"],
+        options: ["for loop", "while loop", "for...in loop", "forEach loop"],
         answer: 2
-      },
-      {
+    },
+    {
         question: "Quelle méthode JavaScript est utilisée pour supprimer le dernier élément d'un tableau ?",
-        options: [ "removeLast()", "pop()", "deleteLast()", "spliceLast()"],
+        options: ["removeLast()", "pop()", "deleteLast()", "spliceLast()"],
         answer: 1
-      },
-      {
+    },
+    {
         question: "Quelle méthode JavaScript est utilisée pour convertir une chaîne de caractères en minuscules?",
-        options: [ "toLowerCase()", "lowerCase()", "convertToLower()", "caseToLower()"],
+        options: ["toLowerCase()", "lowerCase()", "convertToLower()", "caseToLower()"],
         answer: 0
-      },
-      {
+    },
+    {
         question: "Quelle méthode JavaScript est utilisée pour trouver la position d'un élément dans un tableau ?",
-        options: [ "findElement()", "searchElement()", "indexOf()", "getPosition()"],
+        options: ["findElement()", "searchElement()", "indexOf()", "getPosition()"],
         answer: 2
-      },
-      {
+    },
+    {
         question: "Quelle méthode JavaScript est utilisée pour ajouter un élément à la fin d'un tableau ?",
-        options: [ "append()", "push()", "addToEnd()", "insertLast()"],
+        options: ["append()", "push()", "addToEnd()", "insertLast()"],
         answer: 1
-      },
-      {
+    },
+    {
         question: "Quel type de données peut être stocké dans une valeur de clé JSON?",
-        options: [ "Seulement des chaînes de caractères", "Seulement des nombres entiers", "Des tableaux, des objets, des chaînes de caractères, des nombres, des booléens, null", "Uniquement des objets JavaScript"],
+        options: ["Seulement des chaînes de caractères", "Seulement des nombres entiers", "Des tableaux, des objets, des chaînes de caractères, des nombres, des booléens, null", "Uniquement des objets JavaScript"],
         answer: 2
-      },
-      {
+    },
+    {
         question: "Quel format utilise JSON pour représenter une paire clé-valeur?",
-        options: [ "clé : valeur", " 'clé' -> 'valeur'", "clé = valeur", "'clé' : 'valeur'"],
+        options: ["clé : valeur", " 'clé' -> 'valeur'", "clé = valeur", "'clé' : 'valeur'"],
         answer: 2
-      },
-      {
+    },
+    {
         question: "Quelle méthode JavaScript est utilisée pour convertir une chaîne JSON en un objet JavaScript?",
-        options: [ "parseJSON()", "toJSON()", "stringify()", "parse()"],
+        options: ["parseJSON()", "toJSON()", "stringify()", "parse()"],
         answer: 3
-      },
-      {
+    },
+    {
         question: "Quelle est la fonction de base de jQuery utilisée pour sélectionner un élément par son ID?",
-        options: [ "$('.id')", "$('#id')", "$('.getElementById')", "$('.find')"],
+        options: ["$('.id')", "$('#id')", "$('.getElementById')", "$('.find')"],
         answer: 1
-      },
-      {
+    },
+    {
         question: "Quelle méthode jQuery est utilisée pour masquer un élément sélectionné?",
-        options: [ "hide()", "remove()", "displayNone()", "setHidden()"],
+        options: ["hide()", "remove()", "displayNone()", "setHidden()"],
         answer: 1
-      },
-      {
+    },
+    {
         question: "Quelle méthode jQuery est utilisée pour ajouter une classe à un élément sélectionné?",
-        options: [ "addClass()", "appendClass()", "insertClass()", "modifyClass()"],
+        options: ["addClass()", "appendClass()", "insertClass()", "modifyClass()"],
         answer: 0
-      },
-      {
+    },
+    {
         question: "Qu'est-ce que JSON ?",
         options: [
             "Un format de données léger utilisé pour l'échange de données sur le web.",
@@ -402,34 +402,65 @@ const jsQuestions = [
         answer: 0
     }
 
-      // Ajoutez d'autres questions sur JavaScript
+    // Ajoutez d'autres questions sur JavaScript
 ];
 
 
-
+var interval;
 
 
 
 
 function mySnack(vraisOufaux) {
-  // prendre snackbar DIV
-  var x = document.getElementById("snackbar");
+    // prendre snackbar DIV
+    var x = document.getElementById("snackbar");
 
-  // ajouter "show" class à DIV
-  x.className = "show";
+    // ajouter "show" class à DIV
+    x.className = "show";
 
-  if (vraisOufaux == true) {
-    x.innerHTML = 'Bonne réponse';
-    x.style.color = 'green';
+    if (vraisOufaux == true) {
+        x.innerHTML = 'Bonne réponse';
+        x.style.color = 'green';
 
-  }else {
-    x.innerHTML = 'Mauvaise reponse';
-    x.style.color = 'red';
-  }
+    } else {
+        x.innerHTML = 'Mauvaise reponse';
+        x.style.color = 'red';
+    }
 
-  // apres 3 seconds, enlever show class de DIV
-  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    // apres 3 seconds, enlever show class de DIV
+    setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
 }
+
+
+function countdown() {
+  
+
+    let seconds = 10;
+    const countdownElement = document.getElementById('countdown');
+  
+    // Affichage initial
+    countdownElement.textContent = seconds;
+  
+    // Décrémente le compteur chaque seconde
+     interval = setInterval(() => {
+      seconds--;
+  
+      // Affichage du décompte
+      countdownElement.textContent = seconds;
+  
+      // Vérification si le compte à rebours est terminé
+      if (seconds === 0) {
+        clearInterval(interval); // Arrête le compte à rebours
+        countdownElement.textContent = "Fin de jeu";
+        currentQuestion = quizData.length;
+        var getb = document.getElementById('submit')
+        getb.style.display = 'block';
+        var getscore = document.getElementById('score')
+        getscore.style.display = 'block';
+        // Ici tu peux ajouter d'autres actions à effectuer à la fin du compte à rebours
+      }
+    }, 1000); // Exécute toutes les 1000 millisecondes (1 seconde)
+  }
 
 // Combine les questions dans l'ordre souhaité
 const quizData = [...jsQuestions];
@@ -442,7 +473,7 @@ function shuffleArray(array) {
     return array;
 }
 
-shuffleArray(quizData); 
+shuffleArray(quizData);
 
 const questionElement = document.getElementById("question");
 const optionsElement = document.getElementById("options");
@@ -453,12 +484,14 @@ let currentQuestion = 0;
 let score = 0;
 
 function loadQuestion() {
+    clearInterval(interval);
+    countdown();
     const currentQuizData = quizData[currentQuestion];
     questionElement.innerText = currentQuizData.question;
     optionsElement.innerHTML = "";
 
     scoreElement.innerText = score + '/' + quizData.length;
-    
+
     currentQuizData.options.forEach((option, index) => {
         const li = document.createElement("li");
         li.innerText = option;
@@ -473,33 +506,33 @@ function checkAnswer(selectedOption) {
         score++;
         scoreElement.innerText = score + '/' + quizData.length;
         mySnack(true);
-    }else {
-      mySnack(false);
+    } else {
+        mySnack(false);
     }
 
     currentQuestion++;
     if (currentQuestion < quizData.length) {
         loadQuestion();
-        
+
 
     } else {
-      var getb = document.getElementById('submit')
-      getb.style.display = 'block';
+        var getb = document.getElementById('submit')
+        getb.style.display = 'block';
 
-      var getscore = document.getElementById('score')
-      getscore.style.display = 'block';
+        var getscore = document.getElementById('score')
+        getscore.style.display = 'block';
 
-      alert(`Fin du quiz. Votre score est de ${score} sur ${quizData.length}.`);
+        alert(`Fin du quiz. Votre score est de ${score} sur ${quizData.length}.`);
         // Ici, vous pouvez réinitialiser le jeu ou afficher un message de fin de jeu.
-        
+
     }
 }
 
 submitButton.addEventListener("click", () => {
 
-  window.location.reload(); // Recharge la page lorsque vous cliquez sur "Recommencer"
-  var getb = document.getElementById('submit')
-  getb.style.display = 'none';
+    window.location.reload(); // Recharge la page lorsque vous cliquez sur "Recommencer"
+    var getb = document.getElementById('submit')
+    getb.style.display = 'none';
     // if (currentQuestion < quizData.length) {
     //     loadQuestion();
     // } else {
