@@ -75,7 +75,6 @@ function mySnack(vraisOufaux) {
 }
 
 function countdown() {
-  
 
   let seconds = 15;
   const countdownElement = document.getElementById('countdown');
