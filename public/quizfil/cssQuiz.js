@@ -82,7 +82,7 @@ function mySnack(vraisOufaux) {
 function countdown() {
 
 
-  let seconds = 15;
+  let seconds = 30;
   const countdownElement = document.getElementById('countdown');
 
   // Affichage initial
@@ -145,7 +145,7 @@ function loadQuestion() {
   questionElement.innerText = currentQuizData.question;
   optionsElement.innerHTML = "";
 
-  scoreElement.innerText = score + '/' + quizData.length;
+  scoreElement.innerText = score + '/' + score;
 
   currentQuizData.options.forEach((option, index) => {
     const li = document.createElement("li");
@@ -161,7 +161,7 @@ function checkAnswer(selectedOption) {
   const currentQuizData = quizData[currentQuestion];
   if (selectedOption === currentQuizData.answer) {
     score++;
-    scoreElement.innerText = score + '/' + quizData.length;
+    scoreElement.innerText = score + '/' + score;
     mySnack(true);
   } else {
     mySnack(false);
@@ -181,7 +181,18 @@ function checkAnswer(selectedOption) {
     var getcon = document.getElementById('countdown')
     getcon.style.display = 'none';
 
-    alert(`Fin du quiz. Votre score est de ${score} sur ${quizData.length}.`);
+    var finn = document.getElementById('fin')
+    finn.style.display = 'block';
+
+    var ges = document.getElementById('question')
+    ges.style.display = 'none';
+
+    var res = document.getElementById('options')
+    res.style.display = 'none';
+
+    scoreElement.innerText = score + '/' + quizData.length;
+
+    //alert(`Fin du quiz. Votre score est de ${score} sur ${quizData.length}.`);
     // Ici, vous pouvez réinitialiser le jeu ou afficher un message de fin de jeu.
 
   }

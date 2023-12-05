@@ -13,6 +13,10 @@ body {
     /* Couleur si l'image ne se charge pas ou est transparente */
 }
 
+#fin{
+    display: none;
+}
+
 #countdown {
     font-size: 25px;
     font-weight: bold;
